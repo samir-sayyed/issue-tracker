@@ -1,13 +1,20 @@
+// require library
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/issue_tracker');
+//connecting to database
+mongoose.connect('mongodb://localhost/issue-tracker');
 
+// aquire the connection
 const db = mongoose.connection;
 
-db.on('error', console.error.bind(console,"Error connecting to MongoDB"));
+// if error occurs
+db.on('error', console.error.bind(console, "Error in connecting to DataBase"));
+
+// if running then print message
 
 db.once('open', function(){
-    console.log('Connected to Database :: MongoDB');
+    console.log('Connected to database successfully')
 });
 
-module.exports= db;
+// export the database
+module.exports = db;

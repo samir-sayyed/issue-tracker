@@ -3,28 +3,24 @@
 
 <section id="project-list">
      <div id="home-header">
-             <h3>Project</h3>
-             <button>Add New</button>
+             <h3>PROJETCS</h3>
+             <!-- this will redirect to create project page -->
+             <form action="/projects/create_project">
+             <button id="add-project-btn">ADD NEW</button>
+        </form>
      </div>
+     
        <div id="project-container">
-           <p>Project Name</p>
-            <p>Auther Name</p>
+           <p id="project-name"><span>Alarm Clock</span><button id="open-project-btn">OPEN</button> </p>
+            <p id="auther-name">Auther :  <span>Samir</span></p> 
             <div id="description">
-                <h6>Description</h6>
-                <p id="description-content"> sgdwJa  dkgaKBJxbbjd daKudb QDWGBsWQdAdquGDBlg sqiiehQs
-                        dqKJDYGVBQN;JFWAN FNW 3EH2O RVE J1E QE92CJojc
+                <h5>Description</h5>
+                <p id="description-content">Developed this application to fetch and manage all registered user’s data from API and display Name, email, and Role of user. 
+                        Admin can modify the user’s data like name, email or role and delete single/multiple users. 
+                        Created using Html, CSS and JavaScript, Bootstrap and API.
                 </p>
             </div>
-       </div>
-
-       <div id="project-container">
-        <p>Project Name</p>
-         <p>Auther Name</p>
-         <div id="description">
-             <h6>Description</h6>
-             <p id="description-content"> sgdwJa  dkgaKBJxbbjd daKudb QDWGBsWQdAdquGDBlg sqiiehQs
-                     dqKJDYGVBQN;JFWAN FNW 3EH2O RVE J1E QE92CJojc
-             </p>
-         </div>
-    </div>
+       </div>     
 </section>
+
+

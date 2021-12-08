@@ -4,19 +4,18 @@ header{
     background-color: rgb(166, 122, 206);
     display: flex;
     align-items: center;
-    border-radius: 20px;
     box-shadow: 0px 0px 5px 5px white;
 }
 
-img{
+#logo{
     margin-left: 20px;
     height: 70px;
     width: 70px;
     border-radius: 30px;
 }
 
-span{
-    margin-left: 200px;
+#project-title{
+    margin-left: 400px;
     color: white;
     font-size: 30px;
     font-weight: bold;
