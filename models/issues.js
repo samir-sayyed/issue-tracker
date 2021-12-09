@@ -2,18 +2,21 @@ const mongoose = require('mongoose');
 
 // creating schema for project
 
-const projectSchema = new mongoose.Schema({
+const issueSchema = new mongoose.Schema({
 
-    projectName : {
+    issueName : {
         type: String ,
         required : true ,
         unique : true ,
     },
-    projectDescription :{
+    issueDescription :{
         type :String ,
         max : 200,
     },
-    projectAuthor :{
+    lable:[{
+            type: String
+        }],
+    issueAuthor :{
         type:String,
         required :true 
     }   
@@ -22,5 +25,5 @@ const projectSchema = new mongoose.Schema({
 });
 
 
-const Project = mongoose.model('project', projectSchema);
-module.exports = Project;
+const Issue = mongoose.model('issues', issueSchema);
+module.exports = Issue;

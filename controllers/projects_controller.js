@@ -1,13 +1,8 @@
-const Project = require('../models/projects')
+const Project = require('../models/projects');
+const Projects = require('../models/issues');
 
 
-//controller for create project page
-module.exports.createProjectPage = function(req, res){
-    res.render('create_project',{
-        title:"create-project"
-    })
-}
- 
+//for creating new project
 module.exports.createNewProject = function(req, res){ 
     console.log(req.body);
     Project.create(req.body, function(err, project){
@@ -17,8 +12,25 @@ module.exports.createNewProject = function(req, res){
     });
 };
 
-// module.exports.projects = function(req, res){
-//     return res.render('project_details',{
-//         title: "Project"
-//     });
-// }
+
+
+//controller for rendering create project page
+module.exports.createProjectPage = function(req, res){
+    res.render('create_project',{
+        title:"create-project"
+    })
+}
+ 
+
+//controller for rendering project details page
+module.exports.project_details = function(req, res){
+    Projects.find({}, function(err, issues){
+        return res.render('project_details',{
+            title: "Project Details",
+            issues: issues
+        });
+    })
+}
+
+
+

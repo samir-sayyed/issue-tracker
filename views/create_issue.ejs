@@ -1,0 +1,45 @@
+
+   <link rel="stylesheet" href = "/css/create_issue.css">
+
+<section id="create-new-issue">
+
+    <h1 style="text-align: center; margin-top: 10px;">Add New Issue</h1>
+
+    <!-- form for submittng issue -->
+    <form action="/projects/create_issue" method="POST">
+            <div id="new-issue-name">
+                <h3>Issue</h3>
+                <input type="text" name="issueName" id="create-issue-name">
+            </div>
+        
+            <div id="new-issue-description">
+                <h3>Description</h3>
+                <textarea rows="2" name="issueDescription"></textarea>
+            </div>
+
+            <div id="lable-container">
+                <div id="lable-list">
+                    <div id="tag-name">Lables: </div>
+                </div>
+                <h3>Lable</h3>
+                <input type="text" name="lable" id="add-label" list="lable-list-db" autocomplete="off" multiple>
+                <datalist id="lable-list-db">
+                    <option value="lable 1">
+                    <option value="lable 2">
+                    <option value="lable 3">
+            
+                  </datalist>
+                <br>
+                <button id="add-lable-btn">Add lable</button>
+            </div>
+
+           <div id="new-issue-author">
+                <h3>Author</h3>
+                 <input type="text" name="issueAuthor" id="create-project-author">
+           </div>
+
+        <button id="add-issue-btn">CREATE</button>        
+  </form>
+</section>
+
+<script src="/js/create_issue.js"></script>

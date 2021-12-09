@@ -1,13 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const projectController = require('../controllers/projects_controller');
+const issueController = require('../controllers/issue_controller');
 
-// route for create project page
-router.get('/create_project', projectController.createProjectPage);
+// route for redirecrting create project page
+router.get('/create_project_page', projectController.createProjectPage);
 
 //route for creating new project
-router.post('/create', projectController.createNewProject);
+router.post('/create_project', projectController.createNewProject);
 
-//router.get('/projects', projectController.projects);
+//route for creating new issue
+router.post('/create_issue', issueController.createIssue);
+
+//route for redirecting to project details page
+router.get('/projects_details', projectController.project_details);
+
+//route for redirecting create issue page
+router.get('/create_issue_page', issueController.issuePage);
 
 module.exports = router;

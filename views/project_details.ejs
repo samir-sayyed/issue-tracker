@@ -1,5 +1,89 @@
 
-    <link rel= "stylesheet" href="/css/project.css">
-        <h1>Project</h1>
+<link rel= "stylesheet" href="/css/project.css">
 
+<header id="project-header">
+    <h1>Alarm Clock</h1>
+    <form style="margin: 0; padding: 0;" action="/projects/create_issue_page" method="GET">
+        <button id="add-issue-btn">ADD ISSUE</button>
+    </form>
+   
+</header>
+
+<div id="sorting-section">
+        <div id="filter-by-lable">
+            <div class="dropdown">
+                <button class="dropbtn">Lable</button>
+                <div class="dropdown-content">
+
+                    <div class="element">
+                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
+                        <label class="form-check-label" for="lable1">lable1</label>
+                    </div>
+                    <div class="element">
+                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
+                        <label class="form-check-label" for="lable1">lable1</label>
+                    </div>
+                    <div class="element">
+                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
+                        <label class="form-check-label" for="lable1">lable1</label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="filter-btn">
+            <button>Filter  </button>
+        </div>
+        <div id="filter-by-author">
+            <div class="dropdown">
+                <button class="dropbtn">Author</button>
+                <div class="dropdown-content">
+                    <div class="element">
+                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
+                        <label class="form-check-label" for="lable1">Author1</label>
+                    </div>
+                    <div class="element">
+                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
+                        <label class="form-check-label" for="lable1">Author1</label>
+                    </div>
+                    <div class="element">
+                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
+                        <label class="form-check-label" for="lable1">Author1</label>
+                    </div>
+            </div>
+            </div> 
+        </div>
+
+        <div id="search-by-title-description">
+            <form action="">
+                <label style="display: block;" for="search">Search by Title or Description</label>
+                <input type="text" name="search" id="serach-by-title-input">
+                <button>Search</button>
+            </form>
+        </div>
+
+</div>
+
+<div id="all-issues">
+    <h1>All Issues</h1>
+
+    <%for(issue of issues){%>
+        <div id="project-container">
+            <p id="project-name"><span><%= issue.issueName %></span></p>
+            <p id="auther-name">Auther :  <span><%= issue.issueAuthor %></span></p> 
+            <div id="description">
+                <h5>Description</h5>
+                <p id="description-content">
+                    <%= issue.issueDescription %>
+                </p>
+            </div>
+            <div id="tags-container">
+                <div id="tag-name">Tags :</div>
+               <% for(lable of issue.lable){%>
+                 <div class="tag"> lable <%= %></div>
+               <% } %>
+            </div>
+        </div>
+    <%}%> 
+</div>
   

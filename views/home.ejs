@@ -5,22 +5,26 @@
      <div id="home-header">
              <h3>PROJETCS</h3>
              <!-- this will redirect to create project page -->
-             <form action="/projects/create_project">
-             <button id="add-project-btn">ADD NEW</button>
-        </form>
+             <form action="/projects/create_project_page">
+                <button id="add-project-btn">ADD NEW</button>
+            </form>
      </div>
-     
-       <div id="project-container">
-           <p id="project-name"><span>Alarm Clock</span><button id="open-project-btn">OPEN</button> </p>
-            <p id="auther-name">Auther :  <span>Samir</span></p> 
-            <div id="description">
-                <h5>Description</h5>
-                <p id="description-content">Developed this application to fetch and manage all registered user’s data from API and display Name, email, and Role of user. 
-                        Admin can modify the user’s data like name, email or role and delete single/multiple users. 
-                        Created using Html, CSS and JavaScript, Bootstrap and API.
-                </p>
-            </div>
-       </div>     
+
+
+     <% for(project of projects){ %> 
+        <a href="/projects/projects_details">
+            <div id="project-container">
+                <p id="project-name"><span><%= project.projectName %></span><button id="open-project-btn">OPEN</button> </p>
+                    <p id="auther-name">Auther :  <span><%= project.projectAuthor %></span></p> 
+                    <div id="description">
+                        <h5>Description</h5>
+                        <p id="description-content">
+                                <%= project.projectDescription%>
+                        </p>
+                    </div>
+            </div> 
+        </a>    
+       <% } %>    
 </section>
 
 

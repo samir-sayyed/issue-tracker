@@ -6,7 +6,7 @@
     <h1 style="text-align: center; margin-top: 10px;">Add New Project</h1>
 
     <!-- form for submittng project -->
-        <form action="/projects/create" method="POST">
+        <form action="/projects/create_project" method="POST">
             <div id="new-project-name">
                 <h3>Name</h3>
                 <input type="text" name="projectName" id="create-project-name">
@@ -16,6 +16,7 @@
                 <h3>Description</h3>
                 <textarea rows="2" name="projectDescription"></textarea>
             </div>
+            
            <div id="new-project-author">
                 <h3>Author</h3>
                  <input type="text" name="projectAuthor" id="create-project-author">
