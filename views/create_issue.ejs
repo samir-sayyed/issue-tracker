@@ -22,14 +22,19 @@
                     <div id="tag-name">Lables: </div>
                 </div>
                 <h3>Lable</h3>
-                <input type="text" name="lable" id="add-label" list="lable-list-db" autocomplete="off" multiple>
+                <input type="hidden" name="lable" id="lables" value="">
+                <input type="text"  id="add-label" list="lable-list-db" autocomplete="off" multiple>
                 <datalist id="lable-list-db">
-                    <option value="lable 1">
-                    <option value="lable 2">
-                    <option value="lable 3">
-            
+                    
+                    <%for(issue of project.issues){%>
+                        <% for(lable of issue.lable){%>
+                              <option id="lab" value="<%=lable%>">
+                        <%}%>
+                     <%}%>
+                      
                   </datalist>
                 <br>
+             
                 <button id="add-lable-btn">Add lable</button>
             </div>
 
@@ -37,7 +42,7 @@
                 <h3>Author</h3>
                  <input type="text" name="issueAuthor" id="create-project-author">
            </div>
-
+           <input type="hidden" name="projectID" value="<%=project.id%>">
         <button id="add-issue-btn">CREATE</button>        
   </form>
 </section>

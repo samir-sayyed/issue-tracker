@@ -13,9 +13,9 @@ router.post('/create_project', projectController.createNewProject);
 router.post('/create_issue', issueController.createIssue);
 
 //route for redirecting to project details page
-router.get('/projects_details', projectController.project_details);
+router.get('/projects_details/:id', projectController.project_details);
 
 //route for redirecting create issue page
-router.get('/create_issue_page', issueController.issuePage);
+router.get('/create_issue_page/:id', issueController.issuePage);
 
 module.exports = router;

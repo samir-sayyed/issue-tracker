@@ -19,11 +19,14 @@ const issueSchema = new mongoose.Schema({
     issueAuthor :{
         type:String,
         required :true 
+    },
+    projectID :{
+        type: String
     }   
 },{
     timestamps: true
 });
 
 
-const Issue = mongoose.model('issues', issueSchema);
-module.exports = Issue;
+const Issues = mongoose.model('Issues', issueSchema);
+module.exports = Issues;

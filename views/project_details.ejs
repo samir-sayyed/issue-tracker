@@ -2,8 +2,8 @@
 <link rel= "stylesheet" href="/css/project.css">
 
 <header id="project-header">
-    <h1>Alarm Clock</h1>
-    <form style="margin: 0; padding: 0;" action="/projects/create_issue_page" method="GET">
+    <h1 id="project-name-issue"><%=project.projectName%></h1>
+    <form style="margin: 0; padding: 0;" action="/projects/create_issue_page/<%= project._id%>" method="GET">
         <button id="add-issue-btn">ADD ISSUE</button>
     </form>
    
@@ -12,25 +12,22 @@
 <div id="sorting-section">
         <div id="filter-by-lable">
             <div class="dropdown">
+                
+                   
                 <button class="dropbtn">Lable</button>
                 <div class="dropdown-content">
-
+                    <%for(issue of project.issues){%>
+                    <% for(lable of issue.lable){%>
                     <div class="element">
                         <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
-                        <label class="form-check-label" for="lable1">lable1</label>
+                        <label class="form-check-label" for="lable1"><%= lable%></label>  
                     </div>
-                    <div class="element">
-                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
-                        <label class="form-check-label" for="lable1">lable1</label>
-                    </div>
-                    <div class="element">
-                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
-                        <label class="form-check-label" for="lable1">lable1</label>
-                    </div>
-
+                    <%}%><%}%> 
+                    
                 </div>
             </div>
         </div>
+        
         <div id="filter-btn">
             <button>Filter  </button>
         </div>
@@ -38,21 +35,18 @@
             <div class="dropdown">
                 <button class="dropbtn">Author</button>
                 <div class="dropdown-content">
+                    
+                    <%for(issue of project.issues){%>
                     <div class="element">
                         <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
-                        <label class="form-check-label" for="lable1">Author1</label>
+                        <label class="form-check-label" for="lable1"><%= issue.issueAuthor%></label>
                     </div>
-                    <div class="element">
-                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
-                        <label class="form-check-label" for="lable1">Author1</label>
-                    </div>
-                    <div class="element">
-                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
-                        <label class="form-check-label" for="lable1">Author1</label>
-                    </div>
+                    <%}%> 
+                
             </div>
             </div> 
         </div>
+       
 
         <div id="search-by-title-description">
             <form action="">
@@ -66,8 +60,8 @@
 
 <div id="all-issues">
     <h1>All Issues</h1>
-
-    <%for(issue of issues){%>
+    
+    <%for(issue of project.issues){%>
         <div id="project-container">
             <p id="project-name"><span><%= issue.issueName %></span></p>
             <p id="auther-name">Auther :  <span><%= issue.issueAuthor %></span></p> 
@@ -79,11 +73,12 @@
             </div>
             <div id="tags-container">
                 <div id="tag-name">Tags :</div>
-               <% for(lable of issue.lable){%>
-                 <div class="tag"> lable <%= %></div>
-               <% } %>
+            <% for(lable of issue.lable){%>
+                 <div class="tag">  <%=lable %></div>
+               <% } %> 
             </div>
         </div>
     <%}%> 
 </div>
   
+ 

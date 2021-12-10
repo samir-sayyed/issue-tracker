@@ -36,7 +36,7 @@
     margin-left: 250px;
     padding: 5px 8px;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: 0px;
     background-color: blueviolet;
     color: #fff;
 }
@@ -63,7 +63,7 @@
 #open-project-btn{
     font-weight: bold;
     padding: 4px 8px;
-    border-radius: 20px;
+    border-radius: 0px;
     background-color: aquamarine;
 }
 

@@ -16,11 +16,15 @@ const projectSchema = new mongoose.Schema({
     projectAuthor :{
         type:String,
         required :true 
-    }   
+    },
+    issues:[{
+       type: mongoose.Schema.Types.ObjectId,
+       ref:'Issues'
+    }]   
 },{
     timestamps: true
 });
 
 
-const Project = mongoose.model('project', projectSchema);
+const Project = mongoose.model('Project', projectSchema);
 module.exports = Project;

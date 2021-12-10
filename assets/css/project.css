@@ -21,13 +21,21 @@
 
 #sorting-section{
     width: 80%;
-    height: 100px;
+    height: 130px;
     padding: 20px;
     display: flex;
     justify-content: space-evenly;
     margin: auto;
+    background-color: rgb(206, 189, 189);
 }
 
+#project-name-issue{
+    background-color: wheat;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px 5px white;
+
+}
 
 /* style fot dropdown filters */
 
@@ -69,6 +77,10 @@
     margin: 5px;
   }
   
+  .dropdown-content .element:hover{
+    background-color: yellowgreen;
+  }
+
   .dropdown-content a:hover {background-color: #f1f1f1}
   
   .dropdown:hover .dropdown-content {

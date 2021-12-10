@@ -12,9 +12,9 @@
 
 
      <% for(project of projects){ %> 
-        <a href="/projects/projects_details">
+        <a href="/projects/projects_details/<%= project.id%>">
             <div id="project-container">
-                <p id="project-name"><span><%= project.projectName %></span><button id="open-project-btn">OPEN</button> </p>
+                <p id="project-name"><span><%= project.projectName %></span><button id="open-project-btn">Issues: <%= project.issues.length%></button> </p>
                     <p id="auther-name">Auther :  <span><%= project.projectAuthor %></span></p> 
                     <div id="description">
                         <h5>Description</h5>
