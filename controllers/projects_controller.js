@@ -4,7 +4,6 @@ const Issue = require('../models/issues');
 
 //for creating new project
 module.exports.createNewProject = function(req, res){ 
-    console.log(req.body);
     Project.create(req.body, function(err, project){
         if(err){console.log("error in creating project", err); return}
 
@@ -27,7 +26,7 @@ module.exports.project_details = function(req, res){
     let id = req.params.id;
     Project.findById(id).populate('issues').exec( //populating issues so we can use them in a front end
         function(err, project){
-            console.log(project);
+            //console.log(project);
             return res.render('project_details',{
                 title: "Project Details",
                 project: project

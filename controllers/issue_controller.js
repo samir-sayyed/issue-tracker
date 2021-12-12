@@ -9,7 +9,6 @@ module.exports.issuePage = function(req, res){
     // finding the project by id  send project details in response to create issue page
     Project.findById(id).populate('issues').exec(
         function(err, project){
-            console.log(project);
             return res.render('create_issue',{
                 title: "Add Issue",
                 project: project
@@ -21,7 +20,7 @@ module.exports.issuePage = function(req, res){
     // finding the project by id  and storing its issues in db
 module.exports.createIssue = function(req, res){
     let id =  req.body.projectID;
-    Post.findById(id, function(err, project){
+    Project.findById(id, function(err, project){
             // console.log("hi")
             if(project){
                 Issue.create({  //create issue

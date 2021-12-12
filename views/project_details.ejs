@@ -19,7 +19,7 @@
                     <%for(issue of project.issues){%>
                     <% for(lable of issue.lable){%>
                     <div class="element">
-                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
+                        <input class="lable-check-input" type="checkbox" value="<%=issue.id%>"id="lable">
                         <label class="form-check-label" for="lable1"><%= lable%></label>  
                     </div>
                     <%}%><%}%> 
@@ -29,7 +29,7 @@
         </div>
         
         <div id="filter-btn">
-            <button>Filter  </button>
+            <button id="filter-button">Filter  </button>
         </div>
         <div id="filter-by-author">
             <div class="dropdown">
@@ -38,8 +38,8 @@
                     
                     <%for(issue of project.issues){%>
                     <div class="element">
-                        <input class="form-check-input" type="checkbox" value="xyz"id="lable1">
-                        <label class="form-check-label" for="lable1"><%= issue.issueAuthor%></label>
+                        <input class="author-check-input" type="checkbox" value="<%= issue._id%>"id="author">
+                        <label class="form-check-label" for="author"><%= issue.issueAuthor%></label>
                     </div>
                     <%}%> 
                 
@@ -61,10 +61,12 @@
 <div id="all-issues">
     <h1>All Issues</h1>
     
+    <input type="hidden" id="projectId" value="<%=project._id%>">
     <%for(issue of project.issues){%>
         <div id="project-container">
             <p id="project-name"><span><%= issue.issueName %></span></p>
             <p id="auther-name">Auther :  <span><%= issue.issueAuthor %></span></p> 
+            
             <div id="description">
                 <h5>Description</h5>
                 <p id="description-content">
@@ -80,5 +82,7 @@
         </div>
     <%}%> 
 </div>
+
+<script src="/js/filter.js"></script>
   
  
