@@ -35,15 +35,5 @@ module.exports.project_details = function(req, res){
 }
 
 
-module.exports.searchIssues = async (req, res) => {
-    const results = await Issue.find({
-       $or: [{
-          issueName: { $regex: req.body.search, '$options': 'i' }
-       }, {
-          issueDescription: { $regex: req.body.search, '$options': 'i' }
-       }]
-    });
-    return res.json(results)
- }
 
 

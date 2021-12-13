@@ -72,12 +72,6 @@ var filterArray = {};
         //this function will look in map is this isssue is selected or not
          function filter(issues){
 
-            console.log(filterArray.length);
-            // if(filterArray.length === 0){
-            //     allIssueContainer.innerHTML = "<H1> Please select lable or author"
-            //     return;
-            // }
-
             issues.forEach(element => {
                 if(element._id in filterArray){ //if issue is present in map then we will add it to issue container
 

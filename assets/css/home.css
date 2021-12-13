@@ -24,21 +24,26 @@
     display: flex;
    margin-top: 20px;
    align-items: center;
+   justify-content: space-around;
 }
 
 #home-header h3{
-    margin-left: 340px;
     font-weight: bolder;
     font-size: 25px;
 }
 
 #home-header #add-project-btn{
-    margin-left: 250px;
     padding: 5px 8px;
     font-weight: bold;
     border-radius: 0px;
     background-color: blueviolet;
     color: #fff;
+}
+
+#total-projects{
+    background-color: rgb(49, 129, 129);
+    padding: 5px;
+    font-weight: bold;
 }
 
 #project-container{
