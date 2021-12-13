@@ -18,4 +18,5 @@ router.get('/projects_details/:id', projectController.project_details);
 //route for redirecting create issue page
 router.get('/create_issue_page/:id', issueController.issuePage);
 
+
 module.exports = router;

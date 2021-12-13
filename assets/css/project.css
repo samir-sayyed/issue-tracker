@@ -160,7 +160,9 @@
     background-color: rgb(204, 230, 154);
 }
 
-#project-container{
+
+
+.issue-container{
     margin: 20px;
     border: 8px solid rgb(245, 238, 245);
     height: 160px;
@@ -170,7 +172,7 @@
     background-color: rgb(255, 255, 255);
 }
 
-#project-name{
+#issue-name{
     font-size: 20px;
     padding: 0;
     margin: 5px;
@@ -179,12 +181,6 @@
     justify-content: space-between;
 }
 
-#open-project-btn{
-    font-weight: bold;
-    padding: 4px 8px;
-    border-radius: 20px;
-    background-color: aquamarine;
-}
 
 #auther-name{
     margin: 0;
@@ -232,6 +228,19 @@
     text-align: center;
 }
 
+#issue-no{
+    display: flex;
+    align-items: center;
+}
+
+#total-issues{
+    background-color: red;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    margin-left: -300px;
+    margin-right: 200px;
+}
 
 
 

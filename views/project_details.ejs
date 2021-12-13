@@ -51,20 +51,25 @@
         <div id="search-by-title-description">
             <form action="">
                 <label style="display: block;" for="search">Search by Title or Description</label>
-                <input type="text" name="search" id="serach-by-title-input">
-                <button>Search</button>
+                <input type="text" name="search" id="search-by-title-input">
+                <button id="search-button">Search</button>
             </form>
         </div>
 
 </div>
 
 <div id="all-issues">
-    <h1>All Issues</h1>
+    <div id="issue-no">
+        <div id="total-issues">Issues : <%=project.issues.length%></div>
+        <h1>All Issues</h1>
+        
+    </div>
+    
     
     <input type="hidden" id="projectId" value="<%=project._id%>">
     <%for(issue of project.issues){%>
-        <div id="project-container">
-            <p id="project-name"><span><%= issue.issueName %></span></p>
+        <div class="issue-container">
+            <p id="issue-name"><span><%= issue.issueName %></span></p>
             <p id="auther-name">Auther :  <span><%= issue.issueAuthor %></span></p> 
             
             <div id="description">
