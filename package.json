@@ -4,9 +4,8 @@
   "description": "this app is used to track a issues in project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch ./src/styles/scss:./src/styles"
+    "Start": "node index.js"
   },
   "author": "Samir Sayyed",
   "license": "ISC",

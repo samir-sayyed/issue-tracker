@@ -15,7 +15,6 @@ addButton.addEventListener('click', function(e){
     
         lableContainer.appendChild(div);      
     }
-
     lable.value = "";
     // console.log(lables.value)
 })
