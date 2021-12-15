@@ -6,7 +6,12 @@ const projectId = document.getElementById('projectId');
 const id = projectId.value;
    
    
-
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
 
 //adding event listner on filter button
 const filterButton = document.getElementById('filter-button');

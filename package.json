@@ -4,8 +4,7 @@
   "description": "this app is used to track a issues in project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "Start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "Samir Sayyed",
   "license": "ISC",
